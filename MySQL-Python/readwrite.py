@@ -18,7 +18,7 @@ conn =pymysql.connect(database="db1",user="sai",password="sai",host="localhost")
 cur=conn.cursor()
 
 #create database
-cur.execute("CREATE TABLE users(id int primary, name text, age int, gender text, address text);")
+#cur.execute("CREATE TABLE users(id int primary, name text, age int, gender text, address text);")
 
 #to store user data
 
