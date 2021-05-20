@@ -40,8 +40,8 @@ def get_open_weather_map_data():
 def todb():
  response = requests.get(api_url).json()
  currentWeather = response['current']
- 
- return currentWeather
+ weatherReport = currentWeather['weather']
+ return weatherReport
 
 # conn = mysql.connect()
 # cur=conn.cursor()
