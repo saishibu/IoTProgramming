@@ -23,8 +23,8 @@ def get_open_weather_map_data():
   lon = '77.05'
   
   #Create openweathermap url
-  api_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+str(lat)+"&lon="+str(lon)+"&appid="+{OPEN_WEATHER_MAP_API_KEY}+"&units=metric"
-  
+  api_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+str(lat)+"&lon="+str(lon)+"&appid="+OPEN_WEATHER_MAP_API_KEY+"&units=metric"
+  print(api_url)
   #For Python2
   response = urlopen(api_url).read()
   
