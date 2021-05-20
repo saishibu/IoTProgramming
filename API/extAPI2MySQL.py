@@ -27,7 +27,7 @@ def get_open_weather_map_data():
   print(api_url)
   #For Python2
   response = urlopen(api_url).read()
-  
+  print(response)
   #For Python3
   #response = requests.get(api_url)
   return response.json()
