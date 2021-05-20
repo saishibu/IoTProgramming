@@ -30,7 +30,7 @@ def get_open_weather_map_data():
   #response = urlopen(api_url).read()
   
   #For Python3
-  response = requests.get(api_url)
+  response = requests.get(api_url).json()
   print(response)
   return response
 # conn = mysql.connect()
