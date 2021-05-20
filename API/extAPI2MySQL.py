@@ -8,7 +8,7 @@ import pymysql
 from urllib.request import urlopen
 
 #For Python3 only
-#import requests
+import requests
 
 
 #Read OpenWeatherMap API usage here - https://openweathermap.org/api/one-call-api
@@ -27,10 +27,11 @@ def get_open_weather_map_data():
   api_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+str(lat)+"&lon="+str(lon)+"&exclude=hourly,daily,currently,alerts+&appid="+OPEN_WEATHER_MAP_API_KEY+"&units=metric"
   print(api_url)
   #For Python2
-  response = urlopen(api_url).read()
-  print(response)
+  #response = urlopen(api_url).read()
+  
   #For Python3
-  #response = requests.get(api_url)
+  response = requests.get(api_url)
+  print(response)
   return response
 # conn = mysql.connect()
 # cur=conn.cursor()
