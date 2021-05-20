@@ -37,6 +37,7 @@ def get_open_weather_map_data():
   print(response)
   return response
 
+ #To save API response to mySQL
 @app.route('/todb')
 def todb():
  
@@ -48,14 +49,14 @@ def todb():
  weatherReport = currentWeather['weather'][0]
  
  #Connect to MySQL DB (Not tested, May have errors!)
-#  conn = pymysql.connect(database="WeatherDB",user="admin",password="admin",host="localhost")
-#  cur=conn.cursor()
+ conn = pymysql.connect(database="WeatherDB",user="admin",password="admin",host="localhost")
+ cur=conn.cursor()
  
  #Table 1 shows realtime weather
-#  cur.execute("INSERT INTO currentWeatherTable () VALUES ()",currentWeather)
+ cur.execute("INSERT INTO currentWeatherTable (clouds, dew_point, dt, feels_like, humidity, temp ) VALUES (%(clouds)s, %(dew_point)s, %(dt)s, %(feels_like)s, %(humidity)s, %(temp)s )",currentWeather)
  
  #Table 2 shows summary
-#  cur.execute("INSERT INTO weatherSummaryTable (id, description, icon, main) VALUES (%(id)s, %(description)s, %(icon)s, %(main)s)",weatherReport)
+ cur.execute("INSERT INTO weatherSummaryTable (id, description, icon, main) VALUES (%(id)s, %(description)s, %(icon)s, %(main)s)",weatherReport)
  return currentWeather
 
 if __name__ == "__main__":
