@@ -1,5 +1,6 @@
 #NOTE: This program works for python2 & python3
 #Suppose if there is any error, especially with urllib (uncomment), try running with python2
+#You must have created your DB before executing this program
 
 from flask import Flask
 import pymysql
@@ -38,14 +39,24 @@ def get_open_weather_map_data():
 
 @app.route('/todb')
 def todb():
+ 
+ #receiving data from OpenWeatherMap
  response = requests.get(api_url).json()
+ 
+ #Cleaning the data to make it look tidy
  currentWeather = response['current']
  weatherReport = currentWeather['weather'][0]
- return weatherReport
-
-# conn = mysql.connect()
-# cur=conn.cursor()
-
+ 
+ #Connect to MySQL DB (Not tested, May have errors!)
+#  conn = pymysql.connect(database="WeatherDB",user="admin",password="admin",host="localhost")
+#  cur=conn.cursor()
+ 
+ #Table 1 shows realtime weather
+#  cur.execute("INSERT INTO currentWeatherTable () VALUES ()",currentWeather)
+ 
+ #Table 2 shows summary
+#  cur.execute("INSERT INTO weatherSummaryTable (id, description, icon, main) VALUES (%(id)s, %(description)s, %(icon)s, %(main)s)",weatherReport)
+ return currentWeather
 
 if __name__ == "__main__":
   #Application runs on port 3000
