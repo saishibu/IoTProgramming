@@ -39,7 +39,7 @@ def get_open_weather_map_data():
 @app.route('/todb')
 def todb():
  response = requests.get(api_url).json()
- currentWeather = response['current'])
+ currentWeather = response['current']
  
  return currentWeather
 
