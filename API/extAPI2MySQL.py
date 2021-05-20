@@ -11,6 +11,7 @@ from urllib.request import urlopen
 #import requests
 
 
+#Read OpenWeatherMap API usage here - https://openweathermap.org/api/one-call-api
 
 #Insert your OpenWeatherMap API here
 OPEN_WEATHER_MAP_API_KEY = "95c24917f8cc445dad4ea6113a933807"
@@ -23,7 +24,7 @@ def get_open_weather_map_data():
   lon = '77.05'
   
   #Create openweathermap url
-  api_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+str(lat)+"&lon="+str(lon)+"&appid="+OPEN_WEATHER_MAP_API_KEY+"&units=metric"
+  api_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+str(lat)+"&lon="+str(lon)+"&exclude=hourly,daily,currently,alerts+&appid="+OPEN_WEATHER_MAP_API_KEY+"&units=metric"
   print(api_url)
   #For Python2
   response = urlopen(api_url).read()
