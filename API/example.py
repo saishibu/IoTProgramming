@@ -10,7 +10,7 @@ def hello():
 @app.route('/hello')
 def welcome():
   #Return what you want to show on browser page
-  return "Welcome to Amrita Intelligent Infrastructure Data Management and Control Panel App. \n Use one of the options below."
+  return "Welcome to IoT Class."
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0",port=5000,debug=1)
