@@ -3,7 +3,7 @@
 
 import socket
 
-TCP_IP = '<insert IP here>'
+TCP_IP = '<insert IP here>' #Server Address
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 MESSAGE = "Hello from "+ TCP_IP
