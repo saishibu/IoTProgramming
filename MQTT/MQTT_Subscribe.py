@@ -1,3 +1,5 @@
+#http://www.steves-internet-guide.com/install-mosquitto-linux/
+
 import paho.mqtt.client as mqtt
 	
 	broker="localhost"
